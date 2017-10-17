@@ -9,8 +9,8 @@ function read () {
 }
 
 function write () {
-  writeFileSync(storeName, store)
-  return JSON.stringify(store, null, 2)
+  fs.writeFileSync(storeName, JSON.stringify(store, null, 2))
+  return store
 }
 
 function addUser (id) {

@@ -1,5 +1,5 @@
 const fs = require('fs')
-const storeName
+const storeName = 'store'
 
 let store = read()
 

@@ -20,7 +20,7 @@ function addUser (id) {
 }
 
 function addSubscription (id, subId) {
-  if (!store.users[id]) return null
+  if (!store.users[id]) addUser(id)
   store.users[id].subscriptions[subId] = Date.now()
 
   return write()[id]

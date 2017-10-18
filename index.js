@@ -34,7 +34,7 @@ function removeSubscription (id, subId) {
 }
 
 function getUserSubscriptions (id) {
-  return store.users[id]
+  return store.users[id].subscriptions
 }
 
 module.exports = {

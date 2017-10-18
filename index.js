@@ -14,7 +14,7 @@ function write () {
 }
 
 function addUser (id) {
-  store.users[id] ? store.users[id] = { subscriptions: {} } : store.users[id];
+  if (!store.users[id]) store.users[id] = { subscriptions: {} };
 
   return write()[id]
 }

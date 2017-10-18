@@ -33,8 +33,13 @@ function removeSubscription (id, subId) {
   return write()[id]
 }
 
+function getUserSubscriptions (id) {
+  return store.users[id]
+}
+
 module.exports = {
   addUser,
   addSubscription,
-  removeSubscription
+  removeSubscription,
+  getUserSubscriptions
 }

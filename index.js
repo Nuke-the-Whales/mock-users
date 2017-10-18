@@ -16,13 +16,25 @@ function write () {
 function addUser (id) {
   store.users[id] ? store.users[id] = { subscriptions: {} } : store.users[id];
 
-  return write()
+  return write()[id]
 }
 
 function addSubscription (id, subId) {
   if (!store.users[id]) return null
+  store.users[id].subscriptions[subId] = Date.now()
 
-  store.users[id].subscriptions[subId] = true
+  return write()[id]
+}
 
-  return write()
+function removeSubscription (id, subId) {
+  if (!store.users[id]) return null
+  delete store.users[id].subscriptions[subId]
+
+  return write()[id]
+}
+
+module.exports = {
+  addUser,
+  addSubscription,
+  removeSubscription
 }

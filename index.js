@@ -4,7 +4,7 @@ const storeName = 'store'
 let store = read()
 
 function read () {
-  if (!fs.existsSync(storeName)) return {}
+  if (!fs.existsSync(storeName)) return { users: {} }
   return JSON.parse(fs.readFileSync(storeName))
 }
 

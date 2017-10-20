@@ -19,9 +19,9 @@ function addUser (id) {
   return write()[id]
 }
 
-function addSubscription (id, subId) {
+function addSubscription (id, subId, subName) {
   if (!store.users[id]) addUser(id)
-  store.users[id].subscriptions[subId] = Date.now()
+  store.users[id].subscriptions[subId] = subName
 
   return write()[id]
 }

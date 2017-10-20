@@ -34,6 +34,8 @@ function removeSubscription (id, subId) {
 }
 
 function getUserSubscriptions (id) {
+  if (!store.users[id]) return null
+  
   return store.users[id].subscriptions
 }
 
